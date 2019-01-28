@@ -1,5 +1,9 @@
 #!python
 
+############################################################
+##### This is a recursion example using fibonacci sequence 
+############################################################
+
 def fibonacci(n):
     """fibonacci(n) returns the n-th number in the Fibonacci sequence,
     which is defined with the recurrence relation:
@@ -11,8 +15,8 @@ def fibonacci(n):
         raise ValueError('fibonacci is undefined for n = {!r}'.format(n))
     # Implement fibonacci_recursive, _memoized, and _dynamic below, then
     # change this to call your implementation to verify it passes all tests
-    return fibonacci_recursive(n)
-    # return fibonacci_memoized(n)
+    # return fibonacci_recursive(n)
+    return fibonacci_memoized(n)
     # return fibonacci_dynamic(n)
 
 
@@ -28,7 +32,19 @@ def fibonacci_recursive(n):
 
 def fibonacci_memoized(n):
     # TODO: Memoize the fibonacci function's recursive implementation here
-    pass
+    # To improve speed you can use memoization where the most frequent calls are stored
+  if n == 0 or n == 1:
+        return n
+  elif n > 9:
+    return fibonacci_memoized(n - 1) + fibonacci_memoized(n - 2)
+  else:
+    def _frequentCalls_(n):
+      frequent_calls_dict = {2:1, 3:2, 4:3, 5:5, 6:8, 7:13, 8:21, 9:34}
+      return frequent_calls_dict[n]
+    _frequentCalls_(n)
+
+  
+    
     # Once implemented, change fibonacci (above) to call fibonacci_memoized
     # to verify that your memoized implementation passes all test cases
 
