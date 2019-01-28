@@ -74,7 +74,7 @@ def fibonacci_dynamic(n):
   # This helper function is meant to simplify adding values to the dictionary
   def _append_value_to_dictionary_(new_value):
     if new_value is not in fibonacci_values_dictionary:
-      
+      fibonacci_values_dictionary.update = 
     #
 
   return fibonacci_dynamic(n - 1) + fibonacci_dynamic(n - 2)
