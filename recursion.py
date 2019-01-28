@@ -61,20 +61,21 @@ def fibonacci_dynamic(n):
     (O)Notation, how could I implement this on this??
   '''
   #I need to solve this so that every time I get a solution I save it for the next time?
-
   #Some way to not save multiple times an element on the dictionary
-
   #Everytime a new value is added given the nature of  fibonacci you can recicle solutions
 
-  #I need something that 
-
-  #Add even 0 and 1 solution
-
   fibonacci_values_dictionary = {}
+  storage_number = 0
   # This helper function is meant to simplify adding values to the dictionary
+
+  # Maybe t
   def _append_value_to_dictionary_(new_value):
+    # this have to be sure that this is the first time you are adding this value
+    # to this dictionary,
     if new_value is not in fibonacci_values_dictionary:
-      fibonacci_values_dictionary.update = 
+      fibonacci_values_dictionary[storage_number] = new_value
+      storage_number += 1
+   
     #
 
   return fibonacci_dynamic(n - 1) + fibonacci_dynamic(n - 2)
@@ -83,6 +84,8 @@ def fibonacci_dynamic(n):
     Approach 2: Using an array
     (O)Notation, how could I implement this on this??
   '''
+
+
 
   '''
     Approach 3: Using a set
