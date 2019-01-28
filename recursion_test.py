@@ -52,6 +52,9 @@ class RecursionTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             fibonacci('5')
 
+    # Is there a way that using runtime I can make a complex test case that sees the 
+    # advantages of using this determined solution, so I can corroborate which approach 
+    # is better
 
 if __name__ == '__main__':
     unittest.main()
