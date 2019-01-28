@@ -34,12 +34,14 @@ def fibonacci_memoized(n):
   # DONE: Memoize the fibonacci function's recursive implementation here
   # To improve speed you can use memoization where the most frequent calls are stored
   '''
-  Approach 1:
+  Approach 1: Using a dictionary
     (O)Notation, how could I implement this on this??
   '''
   if n > 9:
     return fibonacci_memoized(n - 1) + fibonacci_memoized(n - 2)
   else:
+    #On space complixity what is the difference between making a smaller or bigger dictionary, 
+    #is there much more cost in space for a few more variables
     frequent_calls_dict = {0:0, 1:1, 2:1, 3:2, 4:3, 5:5, 6:8, 7:13, 8:21, 9:34}
     return frequent_calls_dict[n]
 
@@ -48,10 +50,45 @@ def fibonacci_memoized(n):
     # Once implemented, change fibonacci (above) to call fibonacci_memoized
     # to verify that your memoized implementation passes all test cases
 
-
+##################################################
+##### Dynamic Programming
+##### Meaning: is solving a problem by breaking it down into a subset of smaller problems,
+#####          solving those subproblems once and storing their solution in a data structure.
 def fibonacci_dynamic(n):
-    # TODO: Implement the fibonacci function with dynamic programming here
-    pass
+  # TODO: Implement the fibonacci function with dynamic programming here
+  '''
+    Approach 1: Using a dictionary
+    (O)Notation, how could I implement this on this??
+  '''
+  #I need to solve this so that every time I get a solution I save it for the next time?
+
+  #Some way to not save multiple times an element on the dictionary
+
+  #Everytime a new value is added given the nature of  fibonacci you can recicle solutions
+
+  #I need something that 
+
+  #Add even 0 and 1 solution
+
+  fibonacci_values_dictionary = {}
+  # This helper function is meant to simplify adding values to the dictionary
+  def _append_value_to_dictionary_(new_value):
+    if new_value is not in fibonacci_values_dictionary:
+      
+    #
+
+  return fibonacci_dynamic(n - 1) + fibonacci_dynamic(n - 2)
+
+  '''
+    Approach 2: Using an array
+    (O)Notation, how could I implement this on this??
+  '''
+
+  '''
+    Approach 3: Using a set
+    (O)Notation, how could I implement this on this??
+  '''
+
     # Once implemented, change fibonacci (above) to call fibonacci_dynamic
     # to verify that your dynamic implementation passes all test cases
 
