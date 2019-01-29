@@ -51,6 +51,16 @@ def fibonacci_memoized(n):
 #####          solving those subproblems once and storing their solution in a data structure.
 def fibonacci_dynamic(n):
   # TODO: Implement the fibonacci function with dynamic programming here
+
+  ##################################################
+  ### Current Status
+  ### Approach 1
+  ### Of all the tests only the first and fourth pass
+  ### Breaks with big integers  
+  ###             medium integers
+  ###             floating point numbers
+  ### Approach 2: NOT ANY WORK
+  ### Approach 3: NOT ANY WORK
   
   ##################################################
   ### Scenario for this to exist, I constantly need to do fibonacci operations for 
@@ -81,11 +91,11 @@ def fibonacci_dynamic(n):
     # then return the value of the fibonacci sequence
     return fibonacci_values_dictionary.get(n)
 
-  # 3. 
+  # 3. Stor
   f = fibonacci_dynamic(n - 1) + fibonacci_dynamic(n - 2)
 
   # 4. 
-  fibonacci_values_dictionary.update({n:f})
+  fibonacci_values_dictionary = fibonacci_values_dictionary.update({n:f})
    
   return f
 
