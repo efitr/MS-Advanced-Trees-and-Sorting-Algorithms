@@ -1,14 +1,28 @@
 #!python
 
 
-def merge(items1, items2):
-    """Merge given lists of items, each assumed to already be in sorted order,
-    and return a new list containing all items in sorted order.
-    TODO: Running time: ??? Why and under what conditions?
-    TODO: Memory usage: ??? Why and under what conditions?"""
-    # TODO: Repeat until one list is empty
-    # TODO: Find minimum item in both lists and append it to new list
-    # TODO: Append remaining items in non-empty list to new list
+def merge(list1, list2):
+  """Merge given lists of items, each assumed to already be in sorted order,
+  and return a new list containing all items in sorted order.
+  TODO: Running time: ??? Why and under what conditions?
+  TODO: Memory usage: ??? Why and under what conditions?"""
+  # TODO: Repeat until one list is empty
+  # TODO: Find minimum item in both lists and append it to new list
+  # TODO: Append remaining items in non-empty list to new list
+  ###############################################################
+  ### Logic: You already have lists that are already sorted, you want to 
+  ###        mix them and keep them in order 
+  '''
+   Approach1: Given that you don't need to organize the given lists, step
+              ignored. You compare each list first item with the other list
+              first item
+  '''
+  ###############################################################
+  ### Process: 1. Create new list that will hold every
+
+  new_list = list()
+
+
 
 
 def split_sort_merge(items):
