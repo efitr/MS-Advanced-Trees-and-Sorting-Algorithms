@@ -6,7 +6,19 @@ def is_sorted(items):
     TODO: Running time: ??? Why and under what conditions?
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Check that all adjacent items are in order, return early if so
-
+  #####################
+  ### Logic: This has to make sure that all the items in the array are in
+  ###        sorted order
+  #####################
+  ### Approach: Make it go from the start to the end, while it does that
+  ###           it has to compare the previous with the next value and keep
+  ###           going until it's false or everything is sorted
+  #####################
+  ### Process: 1. Make a variable
+  ###          2. The items in position 
+  position = 0
+  while items[position] < items[position + 1]:
+    
 
 def bubble_sort(items):
     """Sort given items by swapping adjacent items that are out of order, and
