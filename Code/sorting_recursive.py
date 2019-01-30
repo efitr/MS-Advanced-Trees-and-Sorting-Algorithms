@@ -15,14 +15,36 @@ def merge(list1, list2):
   '''
    Approach1: Given that you don't need to organize the given lists, step
               ignored. You compare each list first item with the other list
-              first item
+              first item and append the lower value to the new list until 
+              there is none
   '''
   ###############################################################
-  ### Process: 1. Create new list that will hold every
+  ### Process: 1. Create new list that will hold the merged values
+  ###          2. Make position variables for each list
+  ###          3. If list1 has a lower value add it to the new_list
+  ###             increase corresponding position variable
+  ###          4. if not then it means that list2 has a lower value
+  ###             so add that instead to the new_list and increase 
+  ###             corresponding position variable
+  ###          5. If neither is lower than the other then they must
+  ###             be equal, so append both.
 
   new_list = list()
 
+  list1_current_position = 0
+  list2_current_position = 0
 
+  if list1[list1_current_position] < list2[list2_current_position]:
+    new_list.append(list1[list1_current_position])
+    list1_current_position += 1
+  elif list2[list2_current_position] < list1[list1_current_position]:
+    new_list.append(list2[list2_current_position])
+    list2_current_position += 1
+  else:
+    new_list.append(list1[list1_current_position])
+    list1_current_position += 1
+    new_list.append(list2[list2_current_position])
+    list2_current_position += 1
 
 
 def split_sort_merge(items):
