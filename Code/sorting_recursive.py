@@ -69,21 +69,23 @@ def merge(list1, list2):
   elif not list1:
     if list2:
       new_list.append(list2.pop(0))
-    else not list2:
+    elif not list2:
       return new_list
   
   elif not list2:
     if list1:
       new_list.append(list1.pop(0))
-    else not list1:
+    elif not list1:
       return new_list
   else:
     new_list.append(list1.pop(0))
     new_list.append(list2.pop(0))
   
-  return new_list
+  # If I don't return the list does the if loop keeps on going until it return 
+  # the new list given that both lists are empty
+  # return new_list
 
-def split_sort_merge(items):
+def split_sort_merge(split_list):
   """Sort given items by splitting list into two approximately equal halves,
   sorting each with an iterative sorting algorithm, and merging results into
   a list in sorted order.
@@ -93,7 +95,9 @@ def split_sort_merge(items):
   # TODO: Sort each half using any other sorting algorithm
   # TODO: Merge sorted halves into one list in sorted order
   ###############################################################
-  ### Logic: 
+  ### Logic: This is a divide and conquer strategy, intead of doing the whole thing
+  ###        you just keep on separating a huge list into smaller fragments easier
+  ###        sort.
   '''
    Approach1:
 
