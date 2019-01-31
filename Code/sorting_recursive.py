@@ -12,13 +12,13 @@ def merge(list1, list2):
   ###############################################################
   ### Logic: You already have lists that are already sorted, you want to 
   ###        mix them and keep them in order 
+
   '''
    Approach1: Given that you don't need to organize the given lists, step
               ignored. You compare each list first item with the other list
               first item and append the lower value to the new list until 
               there is none
   '''
-  ###############################################################
   ### Process: 1. Create new list that will hold the merged values
   ###          2. Make position variables for each list
   ###          3. If list1 has a lower value add it to the new_list
@@ -45,17 +45,61 @@ def merge(list1, list2):
     list1_current_position += 1
     new_list.append(list2[list2_current_position])
     list2_current_position += 1
+  
+  return new_list
 
+  '''
+   Approach2: This time forget positional values and to save space delete 
+  '''
+  ### Process: 1. Make a new list
+  ###          2. if the first item (python lists start at index 0) of list 1
+  ###             at the first index is lower than the first index of list 2.
+  ###          3. 
+  ###
+  ###
+  ###
+  new_list = list()
+
+  if list1[0] < list2[0]:
+    new_list.append(list1.pop(0))
+
+  elif list2[list2_current_position] < list1[list1_current_position]:
+    new_list.append(list2.pop(0))
+
+  elif not list1:
+    if list2:
+      new_list.append(list2.pop(0))
+    else not list2:
+      return new_list
+  
+  elif not list2:
+    if list1:
+      new_list.append(list1.pop(0))
+    else not list1:
+      return new_list
+  else:
+    new_list.append(list1.pop(0))
+    new_list.append(list2.pop(0))
+  
+  return new_list
 
 def split_sort_merge(items):
-    """Sort given items by splitting list into two approximately equal halves,
-    sorting each with an iterative sorting algorithm, and merging results into
-    a list in sorted order.
-    TODO: Running time: ??? Why and under what conditions?
-    TODO: Memory usage: ??? Why and under what conditions?"""
-    # TODO: Split items list into approximately equal halves
-    # TODO: Sort each half using any other sorting algorithm
-    # TODO: Merge sorted halves into one list in sorted order
+  """Sort given items by splitting list into two approximately equal halves,
+  sorting each with an iterative sorting algorithm, and merging results into
+  a list in sorted order.
+  TODO: Running time: ??? Why and under what conditions?
+  TODO: Memory usage: ??? Why and under what conditions?"""
+  # TODO: Split items list into approximately equal halves
+  # TODO: Sort each half using any other sorting algorithm
+  # TODO: Merge sorted halves into one list in sorted order
+  ###############################################################
+  ### Logic: 
+  '''
+   Approach1:
+
+  '''
+  ### Process: 1. Create new list that will hold the merged values
+
 
 
 def merge_sort(items):
