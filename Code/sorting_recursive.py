@@ -54,10 +54,26 @@ def merge(list1, list2):
   ### Process: 1. Make a new list
   ###          2. if the first item (python lists start at index 0) of list 1
   ###             at the first index is lower than the first index of list 2.
-  ###          3. 
-  ###
-  ###
-  ###
+  ###             Append the item been taken out of the list 1 to the new list
+  ###          3. if the first item of list 2 at the first index is lower than
+  ###             the first index of list 1.
+  ###             Append the item been taken out of the list 1 to the new list.
+  ###          4. if anything in list1.
+  ###             if something still in list2 
+  ###             Append the item at index 0 been taken out of the list 2 to the 
+  ###             new list.
+  ###             elif anything in list2 too
+  ###             return the new list
+  ###          5. if anything in list2.
+  ###             if something still in list1
+  ###             Append the item at index 0 been taken out of the list 1 to the 
+  ###             new list.
+  ###             elif anything in list1 too
+  ###             return the new list
+  ###          6. else this means both items are the same append to the new list.
+  ###             Append the first item from list1 and list2 to the new list, after
+  ###             getting them out
+  
   new_list = list()
 
   if list1[0] < list2[0]:
@@ -85,7 +101,7 @@ def merge(list1, list2):
   # the new list given that both lists are empty
   # return new_list
 
-def split_sort_merge(split_list):
+def split_sort_merge(unsplit_list):
   """Sort given items by splitting list into two approximately equal halves,
   sorting each with an iterative sorting algorithm, and merging results into
   a list in sorted order.
@@ -95,15 +111,42 @@ def split_sort_merge(split_list):
   # TODO: Sort each half using any other sorting algorithm
   # TODO: Merge sorted halves into one list in sorted order
   ###############################################################
-  ### Logic: This is a divide and conquer strategy, intead of doing the whole thing
-  ###        you just keep on separating a huge list into smaller fragments easier
-  ###        sort.
+  ### Logic: I have items in a unarranged list, I want to divide and conquer  
+  ###        or better said divide and merge, I will be separating the 
+  ###        totality of the list into smaller fragments that are easier to sort
   '''
-   Approach1:
+   Approach1: Get the totality of items and divide the list in two new lists, 
+              then sort those sublists and merge those lists
 
   '''
-  ### Process: 1. Create new list that will hold the merged values
+  ### Process: 1. Get the lenght of the list
+  ###          2. Create the new lists
+  ###          3. Set a position holder
+  ###          4. While index is lower or equal to half the lenght of the given list.
+  ###             Add the corresponding index value to the splitted list 1.
+  ###             Increase by one the value of the position holder so by the end you 
+  ###             get the splitted list 1 with half the value of the original list.
+  ###          5. Given that index kept on increasing until half the list, now it goes
+  ###             while it is one value lower than the lenght of the unsplit list.
+  ###             Add the value on position of the current index to splitted list 2.
+  ###             Increase the value plus 1 in the index
 
+  
+  splitted_list1 = list()
+  splitted_list2 = list()
+  lenght_unsplit_list = len(unsplit_list)
+  index = 0
+
+  while index <= int(lenght_unsplit_list/2):
+    splitted_list1.append(unsplit_list[index])
+    index =+ 1
+  print(index)
+  while index < lenght_unsplit_list:
+    splitted_list2.append(unsplit_list[index])
+    index =+ 1
+  
+  # Sort each list
+  # Sum them up
 
 
 def merge_sort(items):
@@ -115,6 +158,26 @@ def merge_sort(items):
     # TODO: Split items list into approximately equal halves
     # TODO: Sort each half by recursively calling merge sort
     # TODO: Merge sorted halves into one list in sorted order
+  ###############################################################
+  ### Logic: 
+  '''
+   Approach1:
+
+  '''
+  ### Process: 1. 
+
+    lenght_unsplit_list = len(unsplit_list)
+  splitted_list1 = list()
+  splitted_list2 = list()
+  index = 0
+
+  while index <= int(lenght_unsplit_list/2):
+    splitted_list1.append(unsplit_list[index])
+    index =+ 1
+  print(index)
+  while index < lenght_unsplit_list:
+    splitted_list2.append(unsplit_list[index])
+    index =+ 1
 
 
 def partition(items, low, high):
@@ -129,6 +192,13 @@ def partition(items, low, high):
     # TODO: Move items less than pivot into front of range [low...p-1]
     # TODO: Move items greater than pivot into back of range [p+1...high]
     # TODO: Move pivot item into final position [p] and return index p
+  ###############################################################
+  ### Logic: 
+  '''
+   Approach1:
+
+  '''
+  ### Process: 1. 
 
 
 def quick_sort(items, low=None, high=None):
@@ -141,3 +211,10 @@ def quick_sort(items, low=None, high=None):
     # TODO: Check if list or range is so small it's already sorted (base case)
     # TODO: Partition items in-place around a pivot and get index of pivot
     # TODO: Sort each sublist range by recursively calling quick sort
+  ###############################################################
+  ### Logic: 
+  '''
+   Approach1:
+
+  '''
+  ### Process: 1. 
