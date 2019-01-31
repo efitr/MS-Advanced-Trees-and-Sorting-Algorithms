@@ -179,7 +179,9 @@ def merge_sort(items):
     splitted_list2.append(unsplit_list[index])
     index =+ 1
 
-
+###############################################################
+##### What is partition?: It is separating something in smaller groups 
+#####
 def partition(items, low, high):
     """Return index `p` after in-place partitioning given items in range
     `[low...high]` by choosing a pivot (TODO: document your method here) from
@@ -193,15 +195,18 @@ def partition(items, low, high):
     # TODO: Move items greater than pivot into back of range [p+1...high]
     # TODO: Move pivot item into final position [p] and return index p
   ###############################################################
-  ### Logic: 
+  ### Logic: To do the quicksort we can be modular by making the partitioning
+  ###        part be outside the scope of the main function and do it's part
+  ###        apart. This is done because it is a key component of quicksort.
   '''
-   Approach1:
+   Approach1: First you select a pivot at random
 
   '''
   ### Process: 1. 
+  pivot = len(items)/2
 
 
-def quick_sort(items, low=None, high=None):
+def quick_sort(unsorted_list, low=None, high=None):
     """Sort given items in place by partitioning items in range `[low...high]`
     around a pivot item and recursively sorting each remaining sublist range.
     TODO: Best case running time: ??? Why and under what conditions?
@@ -212,9 +217,29 @@ def quick_sort(items, low=None, high=None):
     # TODO: Partition items in-place around a pivot and get index of pivot
     # TODO: Sort each sublist range by recursively calling quick sort
   ###############################################################
-  ### Logic: 
+  ### Logic: All your items in the list are a mess and it's not useful at all!
+  ###        Chaos is all over the place, you want it to be done fast so you do
+  ###        quicksort because like the name implies it must be fast.
   '''
-   Approach1:
+   Approach1: Create all the necessary variables before the while loop
 
   '''
   ### Process: 1. 
+  # mientras que la lista sin mesclar este
+  #while unsorted_list
+  pivot = 0
+  # while pivot is less than unsorted list, pivot won't be that because len gives you
+  # + 1 of the current value
+  if low is None:
+    low = 0
+  while pivot < len(unsorted_list):
+    low = unsorted_list[0]
+    for items in unsorted_list:
+
+
+
+  #
+#
+
+
+
