@@ -16,17 +16,28 @@ def is_sorted(items):
   #####################
   ### Process: 1. Make a variable
   ###          2. The items in position 
-  position = 0
-  while items[position] < items[position + 1]:
+  # position = 0
+  # while items[position] < items[position + 1]:
     
 
 def bubble_sort(items):
-    """Sort given items by swapping adjacent items that are out of order, and
-    repeating until all items are in sorted order.
-    TODO: Running time: ??? Why and under what conditions?
-    TODO: Memory usage: ??? Why and under what conditions?"""
-    # TODO: Repeat until all items are in sorted order
-    # TODO: Swap adjacent items that are out of order
+  """Sort given items by swapping adjacent items that are out of order, and
+  repeating until all items are in sorted order.
+  TODO: Running time: ??? Why and under what conditions?
+  TODO: Memory usage: ??? Why and under what conditions?"""
+  # TODO: Repeat until all items are in sorted order
+  # TODO: Swap adjacent items that are out of order
+  ###############################################################
+  ### Logic: I want to get my items sorted and I don't care how long it takes.
+  ###        So I will check continous elements and if the one in a higher 
+  ###        position is lower than the one in the next position change them, 
+  ###        until order reigns.
+  '''
+   Approach1: Here 
+
+  '''
+  ### Process: 1. 
+    
 
 
 def selection_sort(items):
