@@ -74,9 +74,12 @@ class IsSortedTest(unittest.TestCase):
         assert is_sorted([(3, 'A'), (5, 'B')]) is True  # Both items sorted
         assert is_sorted([(3, 'A'), (5, 'A')]) is True  # First item sorted
         assert is_sorted([(3, 'A'), (3, 'B')]) is True  # Second item sorted
-        assert is_sorted([(3, 'A'), (3, 'B'), (3, 'B')]) is True
-        assert is_sorted([(3, 'A'), (3, 'B'), (3, 'B')]) is True
-        
+        assert is_sorted([(3, 'A'), (3, 'C'), (3, 'B')]) is True
+        assert is_sorted([(3, 'A'), (3, 'B'), (3, 'C')]) is True
+        assert is_sorted([(3, 'A'), (3, 'A'), (3, 'A')]) is True  # Duplicate items
+        assert is_sorted([('A', 3), ('A', 3), ('B', 3)]) is True  # Duplicate items
+        assert is_sorted([('A', 3), ('Z', 3), ('A', 3)]) is True  # Duplicate items
+        assert is_sorted([('Z', 3), ('A', 3), ('A', 3)]) is True  # Duplicate items
 
 
     def test_is_sorted_on_unsorted_tuples(self):
