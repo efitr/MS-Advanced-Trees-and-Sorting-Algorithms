@@ -78,9 +78,14 @@ class IsSortedTest(unittest.TestCase):
         assert is_sorted([(3, 'A'), (3, 'B'), (3, 'C')]) is True
         assert is_sorted([(3, 'A'), (3, 'A'), (3, 'A')]) is True  # Duplicate items
         assert is_sorted([('A', 3), ('A', 3), ('B', 3)]) is True  # Duplicate items
-        assert is_sorted([('A', 3), ('Z', 3), ('A', 3)]) is True  # Duplicate items
-        assert is_sorted([('Z', 3), ('A', 3), ('A', 3)]) is True  # Duplicate items
-
+        assert is_sorted([('A', 3), ('Z', 3), ('Z', 3)]) is True  # Duplicate items
+        assert is_sorted([('Z', 3), ('Z', 3), ('Z', 3)]) is True  # Duplicate items
+        assert is_sorted([(7, 'A'), (12, 'C'), (30, 'B')]) is True
+        assert is_sorted([(3, 'A'), (90, 'B'), (200, 'C')]) is True
+        assert is_sorted([(90, 'A'), (90, 'A'), (91, 'A')]) is True  # Duplicate items
+        assert is_sorted([('A', 3), ('X', 3), ('X', 3)]) is True  # Duplicate items
+        assert is_sorted([('A', 3), ('Z', 3), ('Z', 3)]) is True  # Duplicate items
+        assert is_sorted([('D', 3), ('U', 3), ('K', 3)]) is True
 
     def test_is_sorted_on_unsorted_tuples(self):
         # Negative test cases (counterexamples) with lists of unsorted tuples
