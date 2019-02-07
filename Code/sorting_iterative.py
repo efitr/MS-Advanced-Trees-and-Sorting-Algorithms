@@ -3,22 +3,37 @@
 
 def is_sorted(items):
     """Return a boolean indicating whether given items are in sorted order.
-    TODO: Running time: ??? Why and under what conditions?
+    TODO: Running time: O(1) Why and under what conditions?
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Check that all adjacent items are in order, return early if so
   #####################
   ### Logic: This has to make sure that all the items in the array are in
-  ###        sorted order
+  ###        sorted order and return true or false
+  
+  
   #####################
   ### Approach: Make it go from the start to the end, while it does that
   ###           it has to compare the previous with the next value and keep
   ###           going until it's false or everything is sorted
   #####################
-  ### Process: 1. Make a variable
-  ###          2. The items in position 
-  # position = 0
-  # while items[position] < items[position + 1]:
-    
+  ### Process1: 1. Compare that if the list has 0 or 1, return True
+  ###          2. If the items are not sorted, return False
+  ###          3. Then it's asume that it must be sorted
+  # if len(items) == 0 or len(items) == 1:
+  #   return True
+  # elif items != sort(items)
+  #   return False
+  # else:
+  #   return True  
+  
+
+  #####################
+  ### Process2: 1. If the items are not sorted, return False
+  ###          2. If the items are not sorted then they must be sorted, return True
+  if items != sort(items):
+    return False
+  else:
+    return True
 
 def bubble_sort(items):
   """Sort given items by swapping adjacent items that are out of order, and
