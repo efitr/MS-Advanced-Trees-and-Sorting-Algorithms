@@ -18,8 +18,8 @@ class IsSortedTest(unittest.TestCase):
         assert is_sorted([12, 14, 19]) is True
         assert is_sorted([7, 9, 11, 33]) is True
         assert is_sorted([1, 2, 3, 4, 5]) is True
-        assert is_sorted([33, 34, 100, 101]) is True
-        assert is_sorted([1, 17, 23, 23, 23, 79, 99]) is True
+        assert is_sorted([33, 34, 100, 101, 9000]) is True
+        assert is_sorted([1, 17, 23, 23, 23, 79, 99, 100, 130, 1990, 2000]) is True
 
     def test_is_sorted_on_unsorted_integers(self):
         # Negative test cases (counterexamples) with lists of unsorted integers
@@ -89,14 +89,26 @@ class IsSortedTest(unittest.TestCase):
 
     def test_is_sorted_on_unsorted_tuples(self):
         # Negative test cases (counterexamples) with lists of unsorted tuples
-        assert is_sorted([(5, 'B'), (3, 'A')]) is False  # Both items unsorted
-        assert is_sorted([(5, 'A'), (3, 'B')]) is False  # First item unsorted
-        assert is_sorted([(3, 'B'), (3, 'A')]) is False  # Second item unsorted
-        assert is_sorted([('B', 5), ('A', 3)]) is False  # Both items unsorted
-        assert is_sorted([('B', 3), ('A', 5)]) is False  # First item unsorted
-        assert is_sorted([('A', 5), ('A', 3)]) is False  # Second item unsorted
-        # TODO: Write more negative test cases with assert is False statements
-        # ...
+        assert is_sorted([(5, 'B'), (3, 'A')]) is False  
+        assert is_sorted([(5, 'A'), (3, 'B')]) is False  
+        assert is_sorted([(3, 'B'), (3, 'A')]) is False  
+        assert is_sorted([('B', 5), ('A', 3)]) is False  
+        assert is_sorted([('B', 3), ('A', 5)]) is False  
+        assert is_sorted([('A', 5), ('A', 3)]) is False  
+
+        assert is_sorted([(5, 'V'), (3, 'A'), (10, 'A')]) is False  
+        assert is_sorted([(5, 'A'), (3, 'X'), (14, 'A')]) is False  
+        assert is_sorted([(3, 'B'), (31, 'A'), (10, 'Z')]) is False  
+        assert is_sorted([('B', 5), ('A', 3), ('C', 3)]) is False  
+        assert is_sorted([('B', 3), ('X', 15), ('D', 39)]) is False  
+        assert is_sorted([('A', 50), ('Z', 30), ('A', 20)]) is False
+
+        assert is_sorted([(5, 'B'), (3, 'A'), (4, 'A'), (1, 'A')]) is False  
+        assert is_sorted([(500, 'A'), (30, 'B'), (3, 'A'), (100, 'A')]) is False  
+        assert is_sorted([(3, 'B'), (30, 'A'), (300, 'A'), (3, 'A')]) is False  
+        assert is_sorted([('B', 5), ('A', 3), ('B', 3), ('C', 3)]) is False  
+        assert is_sorted([('A', 5), ('Z', 3), ('X', 3), ('X', 3)]) is False  
+        assert is_sorted([('A', 5), ('A', 3), ('B', 3), ('A', 3)]) is False       
 
 
 class IntegerSortTest(unittest.TestCase):
