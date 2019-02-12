@@ -20,13 +20,19 @@
   *  Both the value and the value reference could be empty
   *  Each node contains an array of references/links, it is defined 
 '''
-class Node(object):
-  
+class Node():
+  def __init__(self):
+    self.children = {}
+    self.value = None
 
 class Trie(object):
   #Create a list with the required amount of spaces for this particular problem
   #With the context of the Abecedario been 26 letters, the list will have 26 letters
 
   complete_list = list()
+
+  def add_word():
+
+  def delete():
 
 
