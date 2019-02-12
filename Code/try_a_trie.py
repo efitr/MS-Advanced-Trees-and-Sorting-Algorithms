@@ -22,17 +22,32 @@
 '''
 class Node():
   def __init__(self):
-    self.children = {}
-    self.value = None
+    self.children = [None]*26
+    self.end_of_word = False
 
 class Trie(object):
   #Create a list with the required amount of spaces for this particular problem
   #With the context of the Abecedario been 26 letters, the list will have 26 letters
+  def __init__(self):
+    self.root = self.get_node()
 
-  complete_list = list()
+  def get_node():
+    return Node()
 
-  def add_word():
+  def add_word(self, key):
+
+  def search(self, key):
 
   def delete():
 
+def main():
+  keys = ['hello', 'palabra', 'hell', 'palabrota', 'helado', 'ice', 'icecream', 'cream', 'palo',
+          'hegel', 'putrido', 'putrid', 'puno', 'pork', 'cork']
 
+  t = Trie()
+
+  for key in keys:
+    t.add_word(key)
+
+if __name__ == '__main__':
+  main()
