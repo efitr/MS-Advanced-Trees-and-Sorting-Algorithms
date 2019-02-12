@@ -20,21 +20,29 @@
   *  Both the value and the value reference could be empty
   *  Each node contains an array of references/links, it is defined 
 '''
-class Node():
+
+#Every node represents one letter of some prefix
+class Node(object):
   def __init__(self):
     self.children = [None]*26
     self.end_of_word = False
 
 class Trie(object):
-  #Create a list with the required amount of spaces for this particular problem
-  #With the context of the Abecedario been 26 letters, the list will have 26 letters
+
   def __init__(self):
     self.root = self.get_node()
 
   def get_node():
     return Node()
-
+  
+  # This is meant to identify if the word is already stored
+  def already_on_trie(self, key):
+  #
   def add_word(self, key):
+    
+    #
+    if node.already_on_trie() == False:
+      return 
 
   def search(self, key):
 
