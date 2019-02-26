@@ -29,11 +29,22 @@ def is_sorted(items):
 
   #####################
   ### Process2: 1. If the items are not sorted, return False
-  ###          2. If the items are not sorted then they must be sorted, return True
-  if items != sort(items):
-    return False
-  else:
-    return True
+  ###           2. If the items are sorted, return True
+
+    """ Checks if our data is sorted or not. """
+    # Iterate over each index (position) across our data
+    for position, _ in enumerate(items):
+      # Check if the next datapoint exists in our data
+      if position + 1 < len(items):
+          # Create pointers to current and next datapoint values
+          curr_item, next_item = items[position], items[position + 1]
+          # Check if the current value is greater than the next value
+          if curr_item > next_item:
+            return False
+        # Catch case for if the next datapoint doesn't exist in our data
+      else:
+        return True
+            
 
 def bubble_sort(items):
   """Sort given items by swapping adjacent items that are out of order, and
@@ -51,16 +62,18 @@ def bubble_sort(items):
    Approach1: Here 
 
   '''
-  ### Process: 1. 
-  ###          2.
-  ###          3.
-  ###          4.
+  ### Process: 1. Use is sorted has a helper function to determine that all the elements in the list are in order
+  ###             If it's true, return the ordered list
+  ###          2. Go through every element with its position
+  ###          3. If the item on the left is higher than the item on the right, swap
+  ###          4. when is sorted is True, return the organized list
 
-  # 
-  while items.is_sorted == False:
-    for item in range(items):
-      if item[position] > item[position + 1]
-        item[position], item[position + 1] ==  item[position + 1], item[position]
+  while not is_sorted(items):
+    for position, _ in enumerate(items):
+      if position + 1 == len(items):
+        break
+      if items[position] > items[position + 1]:
+        items[position], items[position + 1] ==  items[position + 1], items[position]
   return items
 
 def selection_sort(items):
