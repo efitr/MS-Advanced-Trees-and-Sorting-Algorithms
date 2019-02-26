@@ -52,8 +52,16 @@ def bubble_sort(items):
 
   '''
   ### Process: 1. 
-    
+  ###          2.
+  ###          3.
+  ###          4.
 
+  # 
+  while items.is_sorted == False:
+    for item in range(items):
+      if item[position] > item[position + 1]
+        item[position], item[position + 1] ==  item[position + 1], item[position]
+  return items
 
 def selection_sort(items):
     """Sort given items by finding minimum item, swapping it with first
