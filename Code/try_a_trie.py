@@ -4,8 +4,8 @@
 ##### Trie, in Python 3
 
 ##### What is a TRIE
-'''' To answer this question let's see for what it was made 
-''''
+''' To answer this question let's see for what it was made 
+'''
 
 ##### For what it was made
 ''' It's role is that of organizing letters in the alphabet.
@@ -43,7 +43,7 @@ class Trie(object):
   
   # This is meant to identify if the word is already stored
   def already_on_trie(self, key):
-    
+    pass
     #if word is already on the trie, dont add it 
   
   # This function return the index position of the value that I'm currently trying to add
@@ -54,6 +54,11 @@ class Trie(object):
     return index_of_letter[letter]
 
   def add_word(self, word):
+    # BIG(O)Notation:
+    # Expected Time Complexity: O(log(N))
+    # Expected Space Complexity: O(log(N))
+    # Current Time Complexity: ???
+    # Current Space Complexity: ???
     # Using root from initializer
     node = self.root
     
@@ -74,17 +79,30 @@ class Trie(object):
     node.end_of_word = True
 
   def search(self, key):
+    # BIG(O)Notation:
+    # Expected Time Complexity: O(log(N))
+    # Expected Space Complexity: O(log(N))
+    # Current Time Complexity: ???
+    # Current Space Complexity: ???
+    pass
 
   def delete():
+    # BIG(O)Notation:
+    # Expected Time Complexity: O(log(N))
+    # Expected Space Complexity: O(log(N))
+    # Current Time Complexity: ???
+    # Current Space Complexity: ???
+    pass
 
 def main():
   keys = ['hello', 'palabra', 'hell', 'palabrota', 'helado', 'ice', 'icecream', 'cream', 'palo',
           'hegel', 'putrido', 'putrid', 'puno', 'pork', 'cork']
 
-  t = Trie()
+  t = Trie() #Making a trie object
 
   for key in keys:
     t.add_word(key)
+  print("Our Trie %s" %(t))
 
 if __name__ == '__main__':
   main()
