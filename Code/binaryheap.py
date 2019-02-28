@@ -22,7 +22,27 @@ class BinaryMinHeap(object):
     def is_empty(self):
         """Return True if this heap is empty, or False otherwise."""
         # TODO: Check if empty based on how many items are in the list
-        # ...
+
+        # Type: Helper Method
+
+        # Purpose:
+        #   * Helper method to see when it's empty
+
+        # Process1:
+        #   * If the object Binary Min Heap the items (that is a list) is
+        #     equal to an array with no values
+        #     return True
+
+        if self.items != []:
+            return True
+        return False
+       
+        # Process2:
+        #   * The previous logic seems to be able to work by itself.
+        '''
+        return self.BinaryMinHeap().items != []
+        return self.items != []
+        '''
 
     def size(self):
         """Return the number of items in this heap."""
@@ -55,6 +75,7 @@ class BinaryMinHeap(object):
             # Remove and return the only item
             return self.items.pop()
         assert self.size() > 1
+        # To delete the last value, makes 
         min_item = self.items[0]
         # Move the last item to the root and bubble down to the leaves
         last_item = self.items.pop()
@@ -63,6 +84,8 @@ class BinaryMinHeap(object):
             self._bubble_down(0)
         return min_item
 
+    # You are giving an item, you are making it be the first
+    # item in the array and returning the item you just took out
     def replace_min(self, item):
         """Remove and return the minimum item at the root of this heap,
         and insert the given item into this heap.
@@ -94,10 +117,19 @@ class BinaryMinHeap(object):
         # Get the parent's index and value
         parent_index = self._parent_index(index)
         parent_item = self.items[parent_index]
-        # TODO: Swap this item with parent item if values are out of order
-        # ...
-        # TODO: Recursively bubble up again if necessary
-        # ...
+
+        # This new value point towards the place that the item with the given 
+        # index is at
+        # holder_of_values_for_swapping = self.items[index] 
+        # If the parent item is lower that it's child(holder_of_values_for_swapping) 
+        if parent_item > self.items[index]:
+            # the item at items[index] becomes the parent
+            self.items[index], parent_item = parent_item, self.items[index]
+            # The index becomes the parent index
+            index = parent_index
+
+            # holder_of_values_for_swapping = parent_item
+            self._bubble_up(index)
 
     def _bubble_down(self, index):
         """Ensure the heap ordering property is true below the given index,
