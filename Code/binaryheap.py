@@ -156,13 +156,13 @@ class BinaryMinHeap(object):
         # TODO: Determine which child item to compare this node's item to
         child_index = 0
 
-        if left_index == child_index:
-            return 
+        # if left_index == child_index:
+        #     return 
 
-        if self.items[left_index] <= self.items[right_index]:
-            child_index = left_index
-        else:
+        if right_index <= self._last_index() and self.items[left_index] > self.items[right_index]:
             child_index = right_index
+        else:
+            child_index = left_index
 
         # What I'm trying to do he
         child_item = self.items[child_index]
@@ -172,7 +172,7 @@ class BinaryMinHeap(object):
             index = child_index
             self._bubble_down(index)
         
-        return
+        # return
 
         # if item > self.items[right_index]:
         #     self.items[right_index], self.items[index] = item, children_right_item
