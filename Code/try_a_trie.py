@@ -9,16 +9,16 @@
 
 ##### For what it was made
 ''' It's role is that of organizing letters in the alphabet.
-    You use it to complete words, autocorrector is a very good use example of 
-    a trie in action
+    You use it to complete words, autocorrector is a very good use 
+    example of a trie in action
 '''
 
 ##### How it works
-''' It's a series of linked list that all connect to an empty node '''
+''' It's a series of linked list that all connect to an empty node 
+'''
 
 ##### Traits
-''' 
-    * It is has long as there are values variations
+''' * It is has long as there are values variations
     * Tends to begin on an empty string
     * Both the value and the value reference could be empty
     * Each node contains an array of references/links, it is defined 
@@ -33,7 +33,7 @@ class Node(object):
     # self.data = ""
     # Because maybe
     self.end_of_word = False
-    self.is_capital_letter = False
+    # self.is_capital_letter = False
 
 class Trie(object):
 
@@ -44,10 +44,6 @@ class Trie(object):
                             "i":8, "j":9, "k":10, "l":11, "m":12, "n":13, "o":14, 
                             "p":15, "q":16, "r":17, "s":18, "t":19, "u":20, "v":21, 
                             "w":22, "x":23, "y":24, "z":25}
-    
-    #TODO: If the word is a capital letter change the property of is_capital_letter 
-    #      to true, 
-    self.change_from_not_capital_letter_ = 
 
   def get_node():
     return Node()
@@ -76,9 +72,6 @@ class Trie(object):
         node = node.children[index]
       
     node.end_of_word = True
-
-  def lenght_of_string_over_50()
-    # if the lenght of the word is over 50 say it's to long to add
 
   def contains(self, word):
     """Return True if the trie constains the given word, otherwise False."""
@@ -118,6 +111,9 @@ class Trie(object):
         return False
       if each_level[index].end_of_word == True:
         return True
+
+  def insert():
+    pass
   
 def main():
   keys = ['hello', 'palabra', 'hell', 'palabrota', 'helado', 'ice', 'icecream', 'cream', 'palo',
