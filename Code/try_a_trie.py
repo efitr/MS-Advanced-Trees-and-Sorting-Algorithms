@@ -36,9 +36,10 @@ class Trie(object):
     self.root = Node()
 
   def get_index(self, letter):
-    return ord(letter) - 97
+    # print(letter)
+    return ord(letter.lower())-ord('a')
 
-  def add_letter_by_letter_the_word(self, word):
+  def add_the_word_letter_by_letter(self, word):
     # BIG(O)Notation:
     # Expected Time Complexity: O(k) => Where 'k' is the average lenght of a string
     # Expected Space Complexity: O(number of possible values??)
@@ -56,7 +57,7 @@ class Trie(object):
       if node.children[index] is None:
         # Create a new node for that index
         new_node = Node()
-        
+
         node.children[index] = new_node
 
         node = new_node
@@ -86,7 +87,8 @@ class Trie(object):
     #  * There will only be as many children has the longest word
     #  * If the word exist at the end of it, the complete word must be there and
     #    the node property end of word would be true
-
+    if (word == ''):
+      return True
     # THINK OF ADDING something 
     # Mark the place where to begin at
     node = self.root
@@ -96,14 +98,12 @@ class Trie(object):
 
       if node.children[index] is None:
         return False
+      node = node.children[index]
 
     if node.end_of_word == True:
       return True
     
     return False
-
-  def insert(self):
-    pass
   
 def main():
   keys = ['hello', 'palabra', 'hell', 'palabrota', 'helado', 'ice', 'icecream', 'cream', 'palo',
