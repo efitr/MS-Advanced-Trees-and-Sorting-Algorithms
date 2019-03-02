@@ -23,21 +23,19 @@ class TrieTest(unittest.TestCase):
         # Create a trie
         trie = Trie()
         # Add a single word to it
-        trie.add_word('Egon')
+        trie.add_word('egon')
         # Make sure the trie contains each word inserted
-        assert trie.contains('Egon') is True
+        assert trie.contains('egon') is True
         assert trie.contains('') is True
         assert trie.contains('Egonn') is False
         assert trie.contains('Yurac') is False
         assert trie.contains('Mirva') is False
-        assert trie.contains('egon') is False
 
     def test_add_word_and_contains_on_medium_trie(self):
         # Create a trie
-        heap = BinaryMinHeap()
+        trie = Trie()
         # Does it make a distinction with caps lock
-        words = ['Egon', 'Egonn', 'Agonn', 'EgOn', 'egon',
-                 '', 'e', ]
+        words = ['egon', 'yurac', 'mirva', 'al', 'mathew']
         for word in words:
             trie.add_word(word)
         # Make sure the trie contains each word inserted
@@ -45,6 +43,12 @@ class TrieTest(unittest.TestCase):
             assert trie.contains(word) is True
         # Make sure the trie does not contain another word
         assert trie.contains('word not in list') is False
+
+    # test that you can't add duplicate
+
+    # test you can add words with capslock
+
+    # 
 
 if __name__ == '__main__':
     unittest.main()
