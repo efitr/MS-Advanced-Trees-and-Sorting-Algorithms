@@ -32,8 +32,10 @@ class Node(object):
 
 class Trie(object):
 
-  def __init__(self):
+  def __init__(self, items=[]):
     self.root = Node()
+    for item in items:
+      self.add_the_word_letter_by_letter(item)
 
   def get_index(self, letter):
     # print(letter)
@@ -104,7 +106,18 @@ class Trie(object):
       return True
     
     return False
-  
+
+  def _add_word_with_prefix_to_list(self, )
+
+  # autocomplete program, finds all words with the prefix given 
+  def search(self, prefix):
+      if self.contains(prefix) == False
+        return []
+
+=
+
+      # This should return a list with all the words that contain that 
+
 def main():
   keys = ['hello', 'palabra', 'hell', 'palabrota', 'helado', 'ice', 'icecream', 'cream', 'palo',
           'hegel', 'putrido', 'putrid', 'puno', 'pork', 'cork']
