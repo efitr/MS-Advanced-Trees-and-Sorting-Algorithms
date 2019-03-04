@@ -112,6 +112,10 @@ class Trie(object):
     # I don't think I actually need this
     return False
 
+
+# I need a function that manages to find every node in the list2\
+  
+
   # Remenber I'm working with indexes, I'm always only working with the index,
   # because if in the index there is a node, a word has been added 
   # I have to get until the prefix has been found
