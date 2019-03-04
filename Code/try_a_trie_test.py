@@ -73,7 +73,35 @@ class TrieTest(unittest.TestCase):
         assert trie.get_letter(24) == 'y'
         assert trie.get_letter(25) == 'z'
 
+    # This is supposed to go through every node that it can find on the node.children list, python3 array,
+    # goes in order through every node in that incidence of children possible places occupied by a node
+    # This has to get in 
+    # This has to do, iteratively go through every node on the index and recursively go inside to 
+    # get the string starting from the last letter of the index
     def test_indexes_in_node(self):
+
+    # This is supposed to go through every node that it can find on the node.children list, python3 array,
+    # goes in order through every node in that incidence of children possible places occupied by a node
+    # This has to get in 
+    # This has to do, iteratively go through every node on the index and recursively go inside to 
+    # get the string starting from the last letter of the index
+    def test_get_string_without_prefix(self):
+
+    # This is supposed to go through every node that it can find on the node.children list, python3 array,
+    # goes in order through every node in that incidence of children possible places occupied by a node
+    # This has to get in 
+    # This has to do, iteratively go through every node on the index and recursively go inside to 
+    # get the string starting from the last letter of the index
+    def test_add_word_with_prefix_to_list(self):
+
+    # This is supposed to go through every node that it can find on the node.children list, python3 array,
+    # goes in order through every node in that incidence of children possible places occupied by a node
+    # This has to get in 
+    # This has to do, iteratively go through every node on the index and recursively go inside to 
+    # get the string starting from the last letter of the index    
+    def test_search(self):
+
+
 
     def test_contains_on_empty_trie(self):
         trie = Trie()
