@@ -112,15 +112,27 @@ class Trie(object):
     # I don't think I actually need this
     return False
 
+  # This will go through every node.children and do something when there is a node in an 
+  # index of the 
+  def _get_to_every_node_on_children(self, python3_list):
+    # Purpose:
+    #   * Go through every element in the list and if there is a node call _get_string_without_prefix
+    for node in range(len(python3_list)):
+      if node != None:
+        # I need to get an index of where the node is 
+        # _get_string_without_prefix this recursively should keep on going deeper 
+      
+      
+      if self.end_of_word == True:
+        # 
 
-# I need a function that manages to find every node in the list2\
-  
+        _add_word_with_prefix_to_list()
 
   # Remenber I'm working with indexes, I'm always only working with the index,
   # because if in the index there is a node, a word has been added 
   # I have to get until the prefix has been found
   # Remenber the property of is_end_of_word
-  def _get_string_without_prefix(self, node.children): # What I'm getting here
+  def _get_string_without_prefix(self, index): # What I'm getting here
     # Purpose:
     #   * Get the remaining of the word that gets made from the prefix
     # Approach:
@@ -143,11 +155,9 @@ class Trie(object):
 
       # I have to think of where is the node
       current_letter = node[letter_to_append]
-
-
-
       _get_string_without_prefix(self, index_last_letter_of_prefix)
 
+    word = '' + letter_to_append
       # get 
       # use string concatenation
       # use recursion on this function 
@@ -159,42 +169,69 @@ class Trie(object):
     if self.end_of_word == True:
       return word_without_prefix
 
-  def _add_word_with_prefix_to_list(self, word):
+  # could this only be part of get_all_possible_words_with_prefix
+  def _add_word_with_prefix_to_list(self, word, python3_list):
     # This will use _find_words_with_prefix
-    for word self._find_word_with_prefix 
+    if self.end_of_word is True:
+
     # for each word it finds with the determined prefix
     # This everytime find word with prefix gets to the property end of word, 
     # this appends the letter to the list
 
   # autocomplete program, finds all words with the prefix given 
-  def search(self, prefix):
+  def get_all_possible_words_with_prefix(self, prefix):
     # Approach:
     #   * See if you have the prefix in your trie, if not return empty string
     #   * go iteratively until through every index that the node has
     #     last letter of the prefix
     #     has 
-
-    # Remenber that this has to concatenate the prefix to the word
-    # After the previous step you add the word to the list
-
-
+    # First, is the prefix on this, if not empty python3 list
     if self.contains(prefix) == False
       return []
+    # Remenber that this has to concatenate the prefix to the word
+    # After the previous step you add the word to the list
+    
+    # Second we are going from the first node until 
+    node = self.root
+    # The lenght of the word is has many levels has you have to search for
+
+    # This is made thinking for when I make it be recursive to not do the first part many times
+    if prefix_alone is prefix:
+
+
+    for letter in word:
+      index = self.get_index(letter)
+
+      if node.children[index] is None:
+        return False
+
+      node = node.children[index]
+
+    node = self.root
+
+
+
+
+    #recursively i can start going into
+
+    _get_to_every_node_on_children(self, node.children):
+
+
     # I have to find all the words with the prefix
 
     # I have to get until the node with the prefix
 
     # then call 
-    _get_string_without_prefix() # this starts from the index of the last letter, and 
-    #  returns the remaining of the word
+
+
+    _get_to_every_node_on_list(self, node.children)
 
     items_with_prefix = []
       # with _find_words_with_prefix you get each word with the prefix
       # with _add_word_with_prefix_to_list
       # I should add the word to the list
+
     return
-
-
       # This should return a list with all the words that contain that 
 
 def main():
