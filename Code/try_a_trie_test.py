@@ -46,6 +46,10 @@ class TrieTest(unittest.TestCase):
 
     def test_contains_on_empty_trie(self):
         trie = Trie()
+        assert trie.contains('') == True
+
+    def test_contains_with_absent_word(self):
+        trie = Trie()
         assert trie.contains('Egon') == False
 
     def test_single_item_trie_add_the_word_letter_by_letter_contains(self):
@@ -55,10 +59,65 @@ class TrieTest(unittest.TestCase):
         trie.add_the_word_letter_by_letter('egon')
         # Make sure the trie contains each word inserted
         assert trie.contains('egon') is True
-        assert trie.contains('') is True
-        assert trie.contains('Egonn') is False
-        assert trie.contains('Yurac') is False
-        assert trie.contains('Mirva') is False
+        assert trie.contains('eGoN') is True
+        assert trie.contains('egoN') is True
+        
+    def test_single_item_trie_add_the_word_letter_by_letter_contains(self):
+        # Create a trie
+        trie = Trie()
+        # Add a single word to it
+        words = ['egonn', 'yurac', 'mirva']
+        for word in words:
+            trie.add_the_word_letter_by_letter('egon')        
+        assert trie.contains('egonn') is True
+        assert trie.contains('YURAc') is True
+        assert trie.contains('Mirva') is True
+        assert trie.contains('egONn') is True
+        assert trie.contains('Yurac') is True
+        assert trie.contains('Mirva') is True
+        assert trie.contains('EGoNn') is True
+        assert trie.contains('yuRAC') is True
+        assert trie.contains('Mirva') is True
+        assert trie.contains('eGONn') is True
+        assert trie.contains('yUraC') is True
+        assert trie.contains('Mirva') is True
+
+    def test_single_item_trie_add_the_word_letter_by_letter_contains(self):
+        # Create a trie
+        trie = Trie()
+        # Add a single word to it
+        words = ['eGonn', 'yUrAc', 'MirVa']
+        for word in words:
+            trie.add_the_word_letter_by_letter('egon')        
+        assert trie.contains('egonn') is True
+        assert trie.contains('yurac') is True
+        assert trie.contains('mirva') is True
+
+    def test_storage_of_words_with_almost_equal_elements(self):
+        trie = Trie()
+        # Add a single word to it
+        words = ['eGonn', 'yUrAAc', 'MirrrVa', 
+                 'eGonnn', 'yUrAc', 'MirVa', 
+                 'eGonnnnnnn', 'yUrAc', 'MirVa']
+
+        for word in words:
+            trie.add_the_word_letter_by_letter(word)
+                
+        assert trie.contains('egon') is False
+        assert trie.contains('yurac') is False
+        assert trie.contains('mirrva') is False
+
+        assert trie.contains('egonn') is True
+        assert trie.contains('yurac') is True
+        assert trie.contains('mirva') is True
+
+        assert trie.contains('egonn') is False
+        assert trie.contains('yurac') is False
+        assert trie.contains('mirva') is False
+                
+        assert trie.contains('egonnnnnn') is True
+        assert trie.contains('yurac') is True
+        assert trie.contains('mirva') is True
 
     def test_add_the_word_letter_by_letter_and_contains_on_medium_trie(self):
         # Create a trie
@@ -73,13 +132,24 @@ class TrieTest(unittest.TestCase):
         # Make sure the trie does not contain another word
         assert trie.contains('word not in list') is False
         assert trie.contains('juan') is False
-
-    
     # test that you can't add duplicate
-
     # test you can add words with capslock
 
-    # 
+    def test_add_the_word_letter_by_letter_and_contains_with_capital_letter(self):
+                # Create a trie
+        trie = Trie()
+        # Does it make a distinction with caps lock
+        words = ['eGon', 'yurAc', 'mIrva', 'al', 'matThEw', 'DafF']
+        for word in words:
+            trie.add_the_word_letter_by_letter(word)
+        # Make sure the trie contains each word inserted
+        for word in words:
+            assert trie.contains(word) is True
+        # Make sure the trie does not contain another word
+        assert trie.contains('word not in list') is False
+        assert trie.contains('egon') is True
+        assert trie.contains('EgOn') is True
+        assert trie.contains('juan') is False
 
 if __name__ == '__main__':
     unittest.main()
