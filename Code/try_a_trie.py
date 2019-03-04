@@ -32,14 +32,18 @@ class Node(object):
 
 class Trie(object):
 
-  def __init__(self, items=[]):
+  def __init__(self, words=[]):
     self.root = Node()
-    for item in items:
-      self.add_the_word_letter_by_letter(item)
+    for word in words:
+      if self.contains(word) is False:
+        self.add_the_word_letter_by_letter(word)
 
   def get_index(self, letter):
     # print(letter)
     return ord(letter.lower())-ord('a')
+  
+  def get_letter(self, index):
+    return node.children[index]
 
   def add_the_word_letter_by_letter(self, word):
     # BIG(O)Notation:
@@ -94,27 +98,98 @@ class Trie(object):
     # THINK OF ADDING something 
     # Mark the place where to begin at
     node = self.root
-    # The lenght of the word is has many levels ahs you have to search for
+    # The lenght of the word is has many levels has you have to search for
     for letter in word:
       index = self.get_index(letter)
 
       if node.children[index] is None:
         return False
+
       node = node.children[index]
 
     if node.end_of_word == True:
       return True
-    
+    # I don't think I actually need this
     return False
 
-  def _add_word_with_prefix_to_list(self, )
+  # Remenber I'm working with indexes, I'm always only working with the index,
+  # because if in the index there is a node, a word has been added 
+  # I have to get until the prefix has been found
+  # Remenber the property of is_end_of_word
+  def _get_string_without_prefix(self, node.children): # What I'm getting here
+    # Purpose:
+    #   * Get the remaining of the word that gets made from the prefix
+    # Approach:
+    #   * First make
+
+    # This only needs from the prefix get all the words that have it
+    # Every word that has this prefix, has this prefix and the property is true,
+    # How could I use is_end_of_word
+    # I can use this function so in the node at the end of the prefix, for everyword it finds
+    # on that node recursively get every letter until the property is found
+
+     # everytime the property is_end_of_word is true
+    # This is using the node from seach to 
+    # First I need to get the letter
+    word = ''
+
+    if self.end_of_word == False:
+
+      letter_to_append = self.get_letter(index_last_letter_of_prefix)
+
+      # I have to think of where is the node
+      current_letter = node[letter_to_append]
+
+
+
+      _get_string_without_prefix(self, index_last_letter_of_prefix)
+
+      # get 
+      # use string concatenation
+      # use recursion on this function 
+
+     # everytime it goes one layer deeper on recursion concatenate the letter at index
+     # with the previous one
+
+    # How exactly I'm saving this
+    if self.end_of_word == True:
+      return word_without_prefix
+
+  def _add_word_with_prefix_to_list(self, word):
+    # This will use _find_words_with_prefix
+    for word self._find_word_with_prefix 
+    # for each word it finds with the determined prefix
+    # This everytime find word with prefix gets to the property end of word, 
+    # this appends the letter to the list
 
   # autocomplete program, finds all words with the prefix given 
   def search(self, prefix):
-      if self.contains(prefix) == False
-        return []
+    # Approach:
+    #   * See if you have the prefix in your trie, if not return empty string
+    #   * go iteratively until through every index that the node has
+    #     last letter of the prefix
+    #     has 
 
-=
+    # Remenber that this has to concatenate the prefix to the word
+    # After the previous step you add the word to the list
+
+
+    if self.contains(prefix) == False
+      return []
+    # I have to find all the words with the prefix
+
+    # I have to get until the node with the prefix
+
+    # then call 
+    _get_string_without_prefix() # this starts from the index of the last letter, and 
+    #  returns the remaining of the word
+
+    items_with_prefix = []
+      # with _find_words_with_prefix you get each word with the prefix
+      # with _add_word_with_prefix_to_list
+      # I should add the word to the list
+    return
+
 
       # This should return a list with all the words that contain that 
 
