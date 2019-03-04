@@ -44,6 +44,37 @@ class TrieTest(unittest.TestCase):
         assert trie.get_index('y') == 24
         assert trie.get_index('z') == 25
 
+    def test_get_letter(self):
+        trie = Trie()
+        assert trie.get_letter(0) == 'a'
+        assert trie.get_letter(1) == 'b'
+        assert trie.get_letter(2) == 'c'
+        assert trie.get_letter(3) == 'd'
+        assert trie.get_letter(4) == 'e'
+        assert trie.get_letter(5) == 'f'
+        assert trie.get_letter(6) == 'g'
+        assert trie.get_letter(7) == 'h'
+        assert trie.get_letter(8) == 'i'
+        assert trie.get_letter(9) == 'j'
+        assert trie.get_letter(10) == 'k'
+        assert trie.get_letter(11) == 'l'
+        assert trie.get_letter(12) == 'm'
+        assert trie.get_letter(13) == 'n'
+        assert trie.get_letter(14) == 'o'
+        assert trie.get_letter(15) == 'p'
+        assert trie.get_letter(16) == 'q'
+        assert trie.get_letter(17) == 'r'
+        assert trie.get_letter(18) == 's'
+        assert trie.get_letter(19) == 't'
+        assert trie.get_letter(20) == 'u'
+        assert trie.get_letter(21) == 'v'
+        assert trie.get_letter(22) == 'w'
+        assert trie.get_letter(23) == 'x'
+        assert trie.get_letter(24) == 'y'
+        assert trie.get_letter(25) == 'z'
+
+    def test_indexes_in_node(self):
+
     def test_contains_on_empty_trie(self):
         trie = Trie()
         assert trie.contains('') == True
@@ -72,12 +103,15 @@ class TrieTest(unittest.TestCase):
         assert trie.contains('egonn') is True
         assert trie.contains('YURAc') is True
         assert trie.contains('Mirva') is True
+
         assert trie.contains('egONn') is True
         assert trie.contains('Yurac') is True
         assert trie.contains('Mirva') is True
+
         assert trie.contains('EGoNn') is True
         assert trie.contains('yuRAC') is True
         assert trie.contains('Mirva') is True
+
         assert trie.contains('eGONn') is True
         assert trie.contains('yUraC') is True
         assert trie.contains('Mirva') is True
@@ -97,23 +131,23 @@ class TrieTest(unittest.TestCase):
         trie = Trie()
         # Add a single word to it
         words = ['eGonn', 'yUrAAc', 'MirrrVa', 
-                 'eGonnn', 'yUrAc', 'MirVa', 
-                 'eGonnnnnnn', 'yUrAc', 'MirVa']
+                 'eGonnn', 'yUrAc', 'MirVaaa', 
+                 'eGonnnnnnn', 'yUrAaaaaaac', 'MirVa']
 
         for word in words:
             trie.add_the_word_letter_by_letter(word)
                 
         assert trie.contains('egon') is False
-        assert trie.contains('yurac') is False
+        assert trie.contains('yuraaaac') is False
         assert trie.contains('mirrva') is False
 
         assert trie.contains('egonn') is True
         assert trie.contains('yurac') is True
         assert trie.contains('mirva') is True
 
-        assert trie.contains('egonn') is False
-        assert trie.contains('yurac') is False
-        assert trie.contains('mirva') is False
+        assert trie.contains('egonnnnnnnn') is False
+        assert trie.contains('yuraAaaaaaac') is False
+        assert trie.contains('mirvaa') is False
                 
         assert trie.contains('egonnnnnn') is True
         assert trie.contains('yurac') is True
