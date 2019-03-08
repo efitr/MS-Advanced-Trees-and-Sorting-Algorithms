@@ -94,3 +94,11 @@ def insertion_sort(items):
     # TODO: Repeat until all items are in sorted order
     # TODO: Take first unsorted item
     # TODO: Insert it in sorted order in front of items
+    for index in range(0, len(items) - 1):
+        min_index = index
+        for index2 in range(index, len(items) - 1):
+            if items[index2] < items[min_index]:
+                min_index = index2
+        items.insert(items[min_index], index)
+        items.remove(items[min_index])
+    return items
